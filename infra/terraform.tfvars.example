@@ -1,0 +1,41 @@
+# Copy to terraform.tfvars before an authorized plan/apply.
+# Do not commit terraform.tfvars. Do not put access keys here.
+
+aws_region   = "us-east-1"
+project_name = "customer360"
+environment  = "dev"
+
+# Target account (documentation only; the provider uses the caller's credentials):
+# 783764597826
+#
+# Replace with a globally unique lowercase bucket name before apply.
+# Suggested: customer360-783764597826-dev-data
+# The value below is intentionally a placeholder name; change it before apply.
+bucket_name = "set-after-aws-access-customer360-dev"
+
+raw_retention_days            = 90
+athena_results_retention_days = 7
+error_retention_days          = 30
+force_destroy                 = false
+
+glue_database_name          = "customer_360"
+athena_bytes_scanned_cutoff = 1073741824
+log_retention_days          = 14
+
+# 60 seconds is the approved Firehose freshness target.
+firehose_buffer_interval_seconds = 60
+firehose_buffer_size_mb          = 1
+freshness_alarm_seconds          = 900
+
+# Keep expensive hosting and container registry off until explicitly approved.
+enable_vpc         = false
+enable_nat_gateway = false
+enable_eks         = false
+enable_ecr         = false
+
+# Set to org/repository only when GitHub OIDC deploy is approved.
+github_repository = ""
+
+# Set an email before creating the budget. Empty creates no budget.
+budget_email       = ""
+monthly_budget_usd = 25

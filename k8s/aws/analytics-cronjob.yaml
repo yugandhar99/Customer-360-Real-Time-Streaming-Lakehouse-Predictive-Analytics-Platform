@@ -1,0 +1,45 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: customer360-analytics
+  namespace: customer360
+spec:
+  schedule: "0 2 * * *"
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 2
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: customer360-dashboard
+          restartPolicy: OnFailure
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 1000
+            runAsGroup: 1000
+          containers:
+            - name: analytics
+              image: customer360-dashboard:local
+              imagePullPolicy: IfNotPresent
+              envFrom:
+                - configMapRef:
+                    name: customer360-config
+              command: ["sh", "-c"]
+              args:
+                - |
+                  python transformations/ltv_analysis.py &&
+                  python transformations/funnel_analysis.py &&
+                  python transformations/retention_analysis.py &&
+                  python transformations/cohort_analysis.py &&
+                  python ml/churn_model.py &&
+                  python ml/segmentation.py
+              resources:
+                requests:
+                  cpu: 100m
+                  memory: 256Mi
+                limits:
+                  cpu: "1"
+                  memory: 1Gi
+              securityContext:
+                allowPrivilegeEscalation: false
