@@ -1,5 +1,5 @@
 2026-04-07 15:51:16,605 - ingestion.data_writer - INFO - Initialized new CSV file with headers at: D:\HARSHITHA_PROJECTS\Data_Engineer\Customer_Segmentation\logs\raw_events.csv
-2026-04-07 15:51:16,659 - EventGenerator - INFO - Event Captured | User: 4e4b2cd6 | Type: login        | Amt: $0.00 
+2026-04-07 15:51:16,659 - EventGenerator - INFO - Event Captured | User: 4e4b2cd6 | Type: login        | Amt: $0.00
 2026-04-07 15:51:17,614 - EventGenerator - INFO - Event Captured | User: 7317f81a | Type: product_view | Amt: $0.00
 2026-04-07 15:51:19,521 - EventGenerator - INFO - Event Captured | User: f1f65b70 | Type: add_to_cart  | Amt: $0.00
 2026-04-07 15:51:20,467 - EventGenerator - INFO - Event Captured | User: 9776dc28 | Type: login        | Amt: $0.00
