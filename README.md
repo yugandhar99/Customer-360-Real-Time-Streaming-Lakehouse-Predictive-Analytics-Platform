@@ -1,4 +1,4 @@
-# ☁️ AWS Customer 360 Lakehouse & Real-Time Analytics Platform
+# ☁️ AWS Customer 360 Lakehouse & Real-Time Analy tics Platform
 
 [![AWS Infrastructure](https://img.shields.io/badge/AWS-S3%20%7C%20Firehose%20%7C%20Athena%20%7C%20Glue%20%7C%20EKS-orange?logo=amazon-aws)](https://aws.amazon.com/)
 [![IaC Terraform](https://img.shields.io/badge/IaC-Terraform%201.5%2B-purple?logo=terraform)](https://www.terraform.io/)
