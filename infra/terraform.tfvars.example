@@ -1,7 +1,7 @@
 # Copy to terraform.tfvars before an authorized plan/apply.
 # Do not commit terraform.tfvars. Do not put access keys here.
 
-aws_region   = "us-east-1"
+aws_region   = "us-east-1" 
 project_name = "customer360"
 environment  = "dev"
 
