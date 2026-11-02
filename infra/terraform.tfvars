@@ -2,7 +2,7 @@
 # Gitignored. Do not apply until cost approval is given in chat.
 # Identity must be customer360-deployer (or another approved role).
 
-aws_region   = "us-east-1"
+aws_region   = "us-east-1" 
 project_name = "customer360"
 environment  = "dev"
 
