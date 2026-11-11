@@ -1,4 +1,4 @@
-# Local deploy intent for account 783764597826 / us-east-1.
+# Local deploy intent for account 783764597826 / us-east-1. 
 # Gitignored. Do not apply until cost approval is given in chat.
 # Identity must be customer360-deployer (or another approved role).
 
