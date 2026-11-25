@@ -1,4 +1,4 @@
-locals {
+locals { 
   name_prefix      = "${var.project_name}-${var.environment}"
   log_bucket_name  = "${var.bucket_name}-logs"
   firehose_stream  = "${local.name_prefix}-events"
